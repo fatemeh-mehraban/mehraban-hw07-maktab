@@ -1,0 +1,85 @@
+
+.container{
+    width: 50%;
+    background-color:var(--lightblue) ;
+}
+.container h3{
+    font-size: 30px;
+    /* background-color: aliceblue; */
+}
+.flex{
+    display: flex;
+   
+}
+.flex-col{
+    flex-direction: column;
+}
+.gap-4{
+    gap:1rem ;
+}
+.gap-5{
+    gap:2.5rem ;
+}
+.flex-center{
+    justify-content:center;
+    align-items:center;
+}
+.txt-center{
+    text-align: center;
+}
+
+.p-all-3{
+    padding:0.75rem ;
+}
+.p-all-4{
+    padding:1rem ;
+}
+.p-all-5{
+    padding:2.5rem ;
+}
+
+.p-bottom-4{
+    padding-bottom:1rem ;
+}
+.p-bottom-5{
+    padding-bottom:2.5rem ;
+}
+.border-bottom{
+    border-bottom: 2px solid var(--white);
+}
+.dis-block{
+display: block;
+}
+.m-top-2{
+    margin-top:.5rem;
+}
+.m-top-3{
+    margin-top:.75rem;
+}
+.m-top-4{
+    margin-top:1rem;
+}
+.m-top-5{
+    margin-top:2.5rem;
+}
+.width-100{
+    width: 100%;
+}
+.width-95{
+    width: 95%;
+}
+.width-12{
+    width: 12%;
+}
+.btn{
+    font-size: 1.3rem;
+    background-color: var(--green);
+    color: var(--white);
+}
+input , textarea, select{
+    font-size: 1.1rem;
+    background-color: var(--white);
+}
+.font-weight{
+    font-weight: bolder;
+}

@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style-6.css">
+</head>
+<body>
+    <main class="main flex flex-center p-all-5">
+        <section class="container p-all-5">
+            <h3 class="txt-center border-bottom p-bottom-5">student registeration form</h3>
+<!-- *******************form*********** -->
+            <form action="" class="flex flex-col gap-5 m-top-5">
+
+                <div>
+                    <label for="firstname" class="dis-block">firstname :</label>
+                    <input type="text" id="firstname" class="m-top-2 width-100 p-all-4" placeholder="Firstname">
+                </div>
+
+                <div>
+                    <label for="middlename" class="dis-block">middlename :</label>
+                    <input type="text" id="middlename" class="m-top-2 width-100 p-all-4" placeholder="middlename"> 
+                </div>
+                
+                
+                <div>
+                    <label for="lastname" class="dis-block">lastname :</label>
+                    <input type="text" id="lastname" class="m-top-2 width-100 p-all-4" placeholder="lastname"> 
+                </div>
+
+
+
+                <div>                   
+                    <label for="corse" class="">corse : </label>
+                    <select name="select" id="corse" class="m-top-2 width-12">
+                        <option value="corse">corse</option>
+                    </select>
+                </div>
+
+
+
+
+                <div>                   
+                    <p>gender :</p>
+                    <div class="m-top-2">
+                    <input type="radio" name="gender" id="male">
+                    <label for="male">male</label>
+
+                    <input type="radio" name="gender" id="female">
+                    <label for="female">female</label>
+
+                    <input type="radio" name="gender" id="other">
+                    <label for="other">other</label>
+                    </div>
+                </div>
+
+
+
+                <div>                   
+                    <label for="phone" class="dis-block">phone :</label>
+                    <input type="tel" id="phone" value="+91" class="m-top-2 width-100 p-all-4"> 
+                    <input type="tel" id="phone" class="m-top-5 width-100 p-all-4" placeholder="phone no.">
+                </div>
+
+
+                <div>                   
+                    <label for="current" class="dis-block">current address :</label>
+                    <textarea name="current" id="current"  rows="5" placeholder="current address" class="m-top-2 p-all-4 width-100"></textarea>
+                </div>
+
+
+
+                <div>
+                    <label for="lastname" class="dis-block font-weight">email :</label>
+                    <input type="email" id="lastname" placeholder="Enter Email" class="m-top-2 width-100 p-all-4"> 
+                </div>
+
+
+
+                <div>
+                    <label for="lastname" class="dis-block font-weight">password :</label>
+                    <input type="password" id="lastname" placeholder="Enter Password" class="m-top-2 width-100 p-all-4"> 
+                </div>
+
+
+                <div>
+                    <label for="lastname" class="dis-block font-weight">re-type password :</label>
+                    <input type="password" id="lastname" placeholder="Retype Password" class="m-top-2 width-100 p-all-4"> 
+                </div>
+
+                <button class="btn width-95 p-all-4">register</button>
+
+            </form>
+
+
+        </section>
+    </main>
+    <script src="app-6.js"></script>
+</body>
+</html>
