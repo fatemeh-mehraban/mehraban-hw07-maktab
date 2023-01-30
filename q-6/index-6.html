@@ -12,11 +12,11 @@
         <section class="container p-all-5">
             <h3 class="txt-center border-bottom p-bottom-5">student registeration form</h3>
 <!-- *******************form*********** -->
-            <form action="" class="flex flex-col gap-5 m-top-5">
+            <form onsubmit="myFunction(event)" action="" class="flex flex-col gap-5 m-top-5" id="myForm">
 
                 <div>
                     <label for="firstname" class="dis-block">firstname :</label>
-                    <input type="text" id="firstname" class="m-top-2 width-100 p-all-4" placeholder="Firstname">
+                    <input type="text" id="firstname" class="m-top-2 width-100 p-all-4" placeholder="Firstname" >
                 </div>
 
                 <div>
@@ -60,7 +60,7 @@
 
                 <div>                   
                     <label for="phone" class="dis-block">phone :</label>
-                    <input type="tel" id="phone" value="+91" class="m-top-2 width-100 p-all-4"> 
+                    <input type="tel" id="codphone" value="+91" class="m-top-2 width-100 p-all-4"> 
                     <input type="tel" id="phone" class="m-top-5 width-100 p-all-4" placeholder="phone no.">
                 </div>
 
@@ -73,21 +73,21 @@
 
 
                 <div>
-                    <label for="lastname" class="dis-block font-weight">email :</label>
-                    <input type="email" id="lastname" placeholder="Enter Email" class="m-top-2 width-100 p-all-4"> 
+                    <label for="email" class="dis-block font-weight">email :</label>
+                    <input type="email" id="email" placeholder="Enter Email" class="m-top-2 width-100 p-all-4"> 
                 </div>
 
 
 
                 <div>
-                    <label for="lastname" class="dis-block font-weight">password :</label>
-                    <input type="password" id="lastname" placeholder="Enter Password" class="m-top-2 width-100 p-all-4"> 
+                    <label for="pass" class="dis-block font-weight">password :</label>
+                    <input type="password" id="pass" placeholder="Enter Password" class="m-top-2 width-100 p-all-4"> 
                 </div>
 
 
                 <div>
-                    <label for="lastname" class="dis-block font-weight">re-type password :</label>
-                    <input type="password" id="lastname" placeholder="Retype Password" class="m-top-2 width-100 p-all-4"> 
+                    <label for="repass" class="dis-block font-weight">re-type password :</label>
+                    <input type="password" id="repass" placeholder="Retype Password" class="m-top-2 width-100 p-all-4"> 
                 </div>
 
                 <button class="btn width-95 p-all-4">register</button>
