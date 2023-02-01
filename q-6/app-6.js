@@ -5,7 +5,7 @@ const textinput= document.querySelectorAll('input[type="text"]')
 
 
 let Name = document.getElementById("firstname")
-let lastname=document.getElementById("lastname")
+let lastname = document.getElementById("lastname")
 let email = document.getElementById("email")
 let form = document.querySelector("form")
 let flag = true
@@ -52,6 +52,19 @@ event.preventDefault();
         }
     }
 
+
+
+    function patternEmail(x){
+       const emailpattern =  /^([a-zA-Z0-9_\.\-])+\@(([a-zA-Z0-9\-])+\.)+([a-zA-Z0-9]{2,4})+$/;
+        if( emailpattern.test(x.value)){
+             return true
+        }else{
+            return false
+
+        }
+    }
+
+
         // if( lastname.value.length <3){
         //     place = lastname.parentNode
         //      let span= document.createElement("span")
@@ -75,6 +88,8 @@ event.preventDefault();
         // })
 
 
+
+        // *************error name****************
         Name.addEventListener("keyup", ()=>{
             if(patternText(Name)){
                 if(Name.parentElement.querySelector(".error")){
@@ -98,17 +113,20 @@ event.preventDefault();
             
         })  
 
-
+// *************error lastname****************
         
-        Name.addEventListener("keyup", ()=>{
+        lastname.addEventListener("keyup", ()=>{
             if(patternText(lastname)){
                 if(lastname.parentElement.querySelector(".error")){
                     lastname.parentElement.querySelector(".error").remove();
                     lastname.style.border = "none"
+
                 flag = true
             }
-            }else{
+            }
+            else{
                 place = lastname.parentNode
+                
                 let span= document.createElement("span")
                 span.className = "error"
                 span.innerHTML = ` ${lastname.id} entered is incorrect!`
@@ -123,8 +141,34 @@ event.preventDefault();
             
         })  
 
-    
+    // ********************************
+ 
+      
+    email.addEventListener("keyup", ()=>{
+        if(patternEmail(email)){
+            if(email.parentElement.querySelector(".error")){
+                email.parentElement.querySelector(".error").remove();
+                email.style.border = "none"
 
+            flag = true
+        }
+        }
+        else{
+            place = email.parentNode
+            
+            let span= document.createElement("span")
+            span.className = "error"
+            span.innerHTML = ` ${email.id} entered is incorrect!`
+            span.style.fontSize = "17px"
+            span.style.padding = "5px"
+            span.style.color = "red"
+            place.appendChild(span)
+            email.style.border = "2px solid red"
+            flag = false
+        }
+ 
+        
+    })  
 
 
        
@@ -156,6 +200,10 @@ event.preventDefault();
     //                     place.appendChild(span)
     //                     item.style.border = "2px solid red"
     //         }
+    //         item.addEventListener("keyup", ()=>{
+    //             place = item.nextElementSibling
+    //             place.child
+    //             }
     // }
 
 // function formvalid() {
