@@ -1,18 +1,29 @@
 const inputs = document.querySelectorAll("input")
 let gender = document.getElementsByName('gender');
 const textinput= document.querySelectorAll('input[type="text"]')
+
+
+
 let Name = document.getElementById("firstname")
 let lastname=document.getElementById("lastname")
 let email = document.getElementById("email")
 let form = document.querySelector("form")
+let flag = true
 
 function myFunction(event) {
 event.preventDefault();
-    patternText()
-    deletgenderandlog()
-    displayRadioValue()
+    // if(patternText){
+    //     console.log(Name.value);
+    // }
+    if(flag){
 
-    
+        deletgenderandlog()
+        displayRadioValue()
+        
+    }
+
+
+
   }
 
 
@@ -26,64 +37,83 @@ event.preventDefault();
 }
     function deletgenderandlog(){
     for(item of inputs){
-        
+
         if(item.name !== "gender" ){
         console.log(`${item.id} : ${item.value}`);
     }
 }
 }
-    function patternText(){
-        if( Name.value.length <3){
-            place = Name.parentNode
-             let span= document.createElement("span")
-             span.className = "eror"
-             span.innerHTML = ` ${Name.id} entered is incorrect!`
-             span.style.fontSize = "17px"
-             span.style.padding = "5px"
-             span.style.color = "red"
-             place.appendChild(span)
-             Name.style.border = "2px solid red"
-             form.dataset.invalid == 1
+    function patternText(x){
+        if( x.value.length <3){
+            // place = x.parentNode
+            //  let span= document.createElement("span")
+            //  span.className = "eror"
+            //  span.innerHTML = ` ${x.id} entered is incorrect!`
+            //  span.style.fontSize = "17px"
+            //  span.style.padding = "5px"
+            //  span.style.color = "red"
+            //  place.appendChild(span)
+            //  x.style.border = "2px solid red"
+            //  form.dataset.invalid == 1
+             return false
+        }else{
+            return true
+
         }
-        Name.addEventListener("change", ()=>{
-            Name.parentElement.lastChild.remove();
-            Name.style.border = "none"
-        })
+    }
 
-        if( lastname.value.length <3){
-            place = lastname.parentNode
-             let span= document.createElement("span")
-             span.className = "eror"
-             span.innerHTML = ` ${lastname.id} entered is incorrect!`
-             span.style.fontSize = "17px"
-             span.style.padding = "5px"
-             span.style.color = "red"
-             place.appendChild(span)
-             lastname.style.border = "2px solid red"
-             form.dataset.invalid == 1
-        }
-        lastname.addEventListener("change", ()=>{
-            lastname.parentElement.lastChild.remove();
-            lastname.style.border = "none"
-        })
-
-
-        // if( !email.value.contains("@")){
-        //     place = email.parentNode
+        // if( lastname.value.length <3){
+        //     place = lastname.parentNode
         //      let span= document.createElement("span")
         //      span.className = "eror"
-        //      span.innerHTML = ` ${email.id} entered is incorrect!`
+        //      span.innerHTML = ` ${lastname.id} entered is incorrect!`
         //      span.style.fontSize = "17px"
         //      span.style.padding = "5px"
         //      span.style.color = "red"
         //      place.appendChild(span)
-        //      email.style.border = "2px solid red"
+        //      lastname.style.border = "2px solid red"
         //      form.dataset.invalid == 1
         // }
-        email.addEventListener("change", ()=>{
-            email.parentElement.lastChild.remove();
-            email.style.border = "none"
-        })
+        // lastname.addEventListener("change", ()=>{
+        //     lastname.parentElement.lastChild.remove();
+        //     lastname.style.border = "none"
+        // })
+
+        // email.addEventListener("change", ()=>{
+        //     email.parentElement.lastChild.remove();
+        //     email.style.border = "none"
+        // })
+
+
+        Name.addEventListener("keyup", ()=>{
+            if(patternText(Name)){
+                if(Name.parentElement.querySelector(".error")){
+                Name.parentElement.querySelector(".error").remove();
+                Name.style.border = "none"
+                flag = true
+            }
+            }else{
+                place = Name.parentNode
+                let span= document.createElement("span")
+                span.className = "error"
+                span.innerHTML = ` ${Name.id} entered is incorrect!`
+                span.style.fontSize = "17px"
+                span.style.padding = "5px"
+                span.style.color = "red"
+                place.appendChild(span)
+                Name.style.border = "2px solid red"
+                flag = false
+            }
+     
+            
+        })  
+
+    
+
+
+
+       
+    
 
 
 
@@ -92,7 +122,12 @@ event.preventDefault();
 
 
 
-        
+
+
+
+
+
+
     //     for(item of textinput){
     //         if(item.value.length < 3 ){
     
@@ -107,10 +142,25 @@ event.preventDefault();
     //                     item.style.border = "2px solid red"
     //         }
     // }
-}
+
 // function formvalid() {
 //     if(form.dataset.invalid == 1){
 //         return null
 //     }
 // }
 
+
+
+
+        // if( !email.value.contains("@")){
+        //     place = email.parentNode
+        //      let span= document.createElement("span")
+        //      span.className = "eror"
+        //      span.innerHTML = ` ${email.id} entered is incorrect!`
+        //      span.style.fontSize = "17px"
+        //      span.style.padding = "5px"
+        //      span.style.color = "red"
+        //      place.appendChild(span)
+        //      email.style.border = "2px solid red"
+        //      form.dataset.invalid == 1
+        // }
