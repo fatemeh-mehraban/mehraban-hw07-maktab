@@ -45,16 +45,6 @@ event.preventDefault();
 }
     function patternText(x){
         if( x.value.length <3){
-            // place = x.parentNode
-            //  let span= document.createElement("span")
-            //  span.className = "eror"
-            //  span.innerHTML = ` ${x.id} entered is incorrect!`
-            //  span.style.fontSize = "17px"
-            //  span.style.padding = "5px"
-            //  span.style.color = "red"
-            //  place.appendChild(span)
-            //  x.style.border = "2px solid red"
-            //  form.dataset.invalid == 1
              return false
         }else{
             return true
@@ -102,6 +92,31 @@ event.preventDefault();
                 span.style.color = "red"
                 place.appendChild(span)
                 Name.style.border = "2px solid red"
+                flag = false
+            }
+     
+            
+        })  
+
+
+        
+        Name.addEventListener("keyup", ()=>{
+            if(patternText(lastname)){
+                if(lastname.parentElement.querySelector(".error")){
+                    lastname.parentElement.querySelector(".error").remove();
+                    lastname.style.border = "none"
+                flag = true
+            }
+            }else{
+                place = lastname.parentNode
+                let span= document.createElement("span")
+                span.className = "error"
+                span.innerHTML = ` ${lastname.id} entered is incorrect!`
+                span.style.fontSize = "17px"
+                span.style.padding = "5px"
+                span.style.color = "red"
+                place.appendChild(span)
+                lastname.style.border = "2px solid red"
                 flag = false
             }
      
